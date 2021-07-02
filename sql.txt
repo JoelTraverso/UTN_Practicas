@@ -1,0 +1,12 @@
+create table personas
+(
+	id_persona serial,
+	nombre varchar(30) not null,
+	apellido varchar(30) not null,
+	dni varchar(30) not null,
+	fecha_nacimiento varchar(20) not null,
+	sexo varchar(20) not null,
+	telefono varchar(20) default 'no cargado',
+	email varchar(30) default 'no cargado',
+	primary key (id_persona)
+)
