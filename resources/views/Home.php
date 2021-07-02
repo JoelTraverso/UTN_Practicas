@@ -1,15 +1,3 @@
-<?php
-/*
-$objeto = new Conexion();
-$conexion=$objeto->conectar();
-$consulta = "select * from personas";
-$resultado=$conexion->prepare($consulta);
-$resultado->execute();
-$datos = $resultado->fetchAll();
-INSERT INTO personas (idpersona,nombre,apellido,dni,fecha_nacimiento,sexo,telefono,email)	
-values (1,'jose','gonzales',36023746,'07/03/1991','Masculino','a','a'),
-var_dump($datos);*/
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
