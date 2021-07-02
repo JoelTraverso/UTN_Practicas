@@ -26,15 +26,15 @@ var_dump($datos);*/
     @csrf
         <div>
             <b>Nombre: </b>
-            <input type="text" name="TxtNombre">
+            <input type="text" name="TxtNombre" required>
             <br>
             <br>
             <b>Apellido: </b>
-            <input type="text" name="TxtApellido">
+            <input type="text" name="TxtApellido" required>
             <br>
             <br>
             <b>Dni: </b>
-            <input type="text" name="TxtDni">
+            <input type="text" name="TxtDni" required>
             <br>
             <br>
             <b>Sexo: </b>
@@ -46,7 +46,7 @@ var_dump($datos);*/
             <br>
             <br>
             <b>Fecha nacimiento: </b>
-            <input type="text" name="TxtFec">
+            <input type="text" name="TxtFec" required>
             <br>
             <br>
             <b>Telefono: </b>
@@ -65,7 +65,7 @@ var_dump($datos);*/
     @csrf
         <div>
             <b>Dni: </b>
-            <input type="text" name="TxtDni">
+            <input type="text" name="TxtDni" required>
             <br>
             <br>
             <input type="submit" name="cargar" value="cargar" onclick="cargar();">
@@ -78,7 +78,7 @@ var_dump($datos);*/
             <b>Nombre: </b>
             <?php
                 if(isset($_SESSION["nombre"]))
-                echo '<input type="text" name="TxtNombre" value="'.$_SESSION['nombre'].'">';
+                echo '<input type="text" name="TxtNombre" value="'.$_SESSION['nombre'].'" required>';
                 else
                 echo '<input type="text" value="">';
             ?>
@@ -87,7 +87,7 @@ var_dump($datos);*/
             <b>Apellido: </b>
             <?php
                 if(isset($_SESSION["apellido"]))
-                echo '<input type="text" name="TxtApellido" value="'.$_SESSION['apellido'].'">';
+                echo '<input type="text" name="TxtApellido" value="'.$_SESSION['apellido'].'" required>';
                 else
                 echo '<input type="text" value="">';
             ?>
@@ -127,7 +127,7 @@ var_dump($datos);*/
             <b>Fecha nacimiento: </b>
             <?php
                 if(isset($_SESSION["fec_nac"]))
-                echo '<input type="text" name="TxtFec" value="'.$_SESSION['fec_nac'].'">';
+                echo '<input type="text" name="TxtFec" value="'.$_SESSION['fec_nac'].'" required>';
                 else
                 echo '<input type="text" value="">';
             ?>

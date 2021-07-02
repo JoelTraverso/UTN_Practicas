@@ -14,10 +14,18 @@ class ControladorForm extends Controller
             $fec_nac = $request->input('TxtFec');
             $tel = $request->input('TxtTel');
             $email = $request->input('TxtEmail');
+        
+        if (DB::table('personas')->where('dni',$dni)->doesntExist()) 
+        {
             $data=array('nombre'=>$nombre,"apellido"=>$apellido,"dni"=>$dni,"fecha_nacimiento"=>$fec_nac,"sexo"=>$sexo,"telefono"=>$tel,"email"=>$email);
             DB::table('personas')->insert($data);
             echo "Registro Guardado con exito<br/>";
             return view('Home');
+        }else
+        {
+            echo "Error registro ya existente";
+            return view('Home');
+        }
     }
 
     public function cargar(Request $request)
@@ -29,12 +37,11 @@ class ControladorForm extends Controller
             $tel = $request->input('TxtTel');
             $email = $request->input('TxtEmail');
             DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['nombre' =>  $nombre ]);
-            DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['telefono' =>  $tel]);
-            DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['email' => $email]);
             DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['apellido' => $apellido]);
             DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['sexo' =>  $sexo]);
             DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['fecha_nacimiento' => $fec_nac]);
-            
+            DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['telefono' =>  $tel]);
+            DB::table('personas')->where('dni', $_SESSION["dni"] )->update(['email' => $email]);
             return view('Home');
     }
 
