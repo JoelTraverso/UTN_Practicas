@@ -19,6 +19,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::view('/','Home')->name('Home');
 
-Route::post('/guardar','ControladorForm@guardar');
 Route::post('/cargar','ControladorForm@cargar');
 Route::post('/index','ControladorForm@index');
